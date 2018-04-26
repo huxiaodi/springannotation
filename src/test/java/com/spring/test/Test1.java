@@ -23,9 +23,20 @@ public class Test1 {
 
     @Test
     public void test1() {
+        // 牙膏  洗面奶 数据线 洗衣液
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
-        Person person = (Person)annotationConfigApplicationContext.getBean("person");
+        //Person person = (Person)annotationConfigApplicationContext.getBean("person"); 因为bean 使用了@Bean("personName")  所以这个默认的就不能使用了
+        Person person = (Person)annotationConfigApplicationContext.getBean("personName");
         System.out.println(person.toString());
+        System.out.println("=======");
+        Person person1 = (Person)annotationConfigApplicationContext.getBean(Person.class);
+        System.out.println(person1.toString());
+        System.out.println("=======");
+        String personStr[] = annotationConfigApplicationContext.getBeanNamesForType(Person.class);
+        for(String str : personStr){
+            System.out.println(str);
+        }
+        System.out.println("=======");
     }
 
 

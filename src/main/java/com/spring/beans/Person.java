@@ -14,7 +14,6 @@ import lombok.*;
 public class Person {
 
     private Integer age;
-
     private String name;
 
 
