@@ -1,3 +1,21 @@
-/target/
-/.idea/
+### 自定义排除 ###
+/logs/
+/dlebvue/
+.log
+target/
+!.mvn/wrapper/maven-wrapper.jar
+rebel.xml
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
 .idea
+*.iws
+*.iml
+*.ipr
