@@ -14,8 +14,9 @@ import org.springframework.stereotype.Service;
 @Configuration  // 告诉spring 这是一个配置类
 @ComponentScans(value = {
         @ComponentScan(value = "com.spring",includeFilters={
-                @ComponentScan.Filter(type= FilterType.ANNOTATION,classes = {Controller.class}),
-                @ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,classes = {BookService.class})
+//                @ComponentScan.Filter(type= FilterType.ANNOTATION,classes = {Controller.class}),
+//                @ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE,classes = {BookService.class}),
+                @ComponentScan.Filter(type=FilterType.CUSTOM,classes ={MyTypeFilter.class})
         },useDefaultFilters = false)
 })
 
