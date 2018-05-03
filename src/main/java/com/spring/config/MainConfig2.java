@@ -1,11 +1,10 @@
 package com.spring.config;
 
+import com.spring.Condition.LinuxCondition;
+import com.spring.Condition.WindowsCondition;
 import com.spring.beans.Person;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 /**
  * @Description：
@@ -34,12 +33,14 @@ public class MainConfig2 {
     }
 
 
+    @Conditional({WindowsCondition.class})
     @Bean("比尔")
     public  Person person1(){
         return new Person(60,"比尔");
     }
 
 
+   @Conditional({LinuxCondition.class})
     @Bean("维纳斯")
     public  Person person2(){
         return new Person(60,"维纳斯");
