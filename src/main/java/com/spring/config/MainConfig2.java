@@ -1,8 +1,9 @@
 package com.spring.config;
 
-import com.spring.Condition.LinuxCondition;
-import com.spring.Condition.WindowsCondition;
+import com.spring.Condition.*;
+import com.spring.beans.Color;
 import com.spring.beans.Person;
+import com.spring.beans.Red;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.*;
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.*;
  * @Date: Created in 14:44 2018/4/27
  */
 @Configuration
+@Import({Red.class, MYImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MainConfig2 {
 
 //    Specifies the name of the scope to use for the annotated component/bean.
@@ -45,6 +47,16 @@ public class MainConfig2 {
     public  Person person2(){
         return new Person(60,"维纳斯");
     }
+
+
+    /**
+     * FctoryBean
+     */
+    @Bean
+    public ColorFactory getColorFactory(){
+        return new ColorFactory();
+    }
+
 
 
 

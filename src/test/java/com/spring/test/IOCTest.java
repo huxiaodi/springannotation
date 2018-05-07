@@ -1,5 +1,7 @@
 package com.spring.test;
 
+import com.spring.Condition.ColorFactory;
+import com.spring.beans.Color;
 import com.spring.beans.Person;
 import com.spring.config.MainConfig;
 import com.spring.config.MainConfig2;
@@ -48,9 +50,26 @@ public class IOCTest {
         for (String s : beanNamesForType) {
             System.out.println(s);
         }
-
         Map<String, Person> beansOfType = applicationContext.getBeansOfType(Person.class);
         System.out.println(beansOfType);
+    }
+
+    @Test
+    public void test4(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+        String[] beanNamesForType = applicationContext.getBeanDefinitionNames();
+        for (String s : beanNamesForType) {
+            System.out.println(s);
+        }
+        Object a  = applicationContext.getBean("getColorFactory");
+        Object b  = applicationContext.getBean("getColorFactory");
+        System.out.println(a.getClass());
+        System.out.println( a == b);
+
+        Object c = applicationContext.getBean("&getColorFactory");
+        System.out.println(c.getClass());
 
     }
+
+
 }
