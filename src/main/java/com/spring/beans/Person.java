@@ -1,6 +1,8 @@
 package com.spring.beans;
 
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  * @Description：
@@ -13,8 +15,18 @@ import lombok.*;
 @NoArgsConstructor
 public class Person {
 
+
+    @Value("#{10+8}")
     private Integer age;
+    @Value("张三")
     private String name;
+    @Value("${person.nickName}")
+    private String nickName;
+
+    public Person(Integer age ,String name){
+        this.age = age;
+        this.name = name;
+    }
 
 
 }
