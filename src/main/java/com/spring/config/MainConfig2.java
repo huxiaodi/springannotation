@@ -1,10 +1,9 @@
 package com.spring.config;
 
 import com.spring.Condition.*;
-import com.spring.beans.Color;
+import com.spring.beans.ColorFactory;
 import com.spring.beans.Person;
 import com.spring.beans.Red;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.*;
 
 /**

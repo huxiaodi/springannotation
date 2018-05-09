@@ -1,10 +1,9 @@
 package com.spring.test;
 
-import com.spring.Condition.ColorFactory;
-import com.spring.beans.Color;
 import com.spring.beans.Person;
 import com.spring.config.MainConfig;
 import com.spring.config.MainConfig2;
+import com.spring.config.MainConfigOfLifeCycle;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -68,6 +67,19 @@ public class IOCTest {
 
         Object c = applicationContext.getBean("&getColorFactory");
         System.out.println(c.getClass());
+    }
+
+    /**
+     * Bean的生命周期 ====== MainConfigOfLifeCycle
+     */
+    @Test
+    public void test5(){
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
+        System.out.println("容器创建完成");
+        //annotationConfigApplicationContext.getBean("car");
+        // 关闭容器
+        annotationConfigApplicationContext.close();
+
 
     }
 

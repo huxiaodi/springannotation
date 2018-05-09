@@ -1,4 +1,4 @@
-package com.spring.Condition;
+package com.spring.beans;
 
 import com.spring.beans.Color;
 import org.springframework.beans.factory.BeanFactory;
