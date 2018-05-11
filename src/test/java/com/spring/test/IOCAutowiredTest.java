@@ -1,5 +1,6 @@
 package com.spring.test;
 
+import com.spring.beans.Red;
 import com.spring.config.MainConfigOfAutowired;
 import com.spring.dao.BookDao;
 import com.spring.service.BookService;
@@ -32,10 +33,18 @@ public class IOCAutowiredTest {
 
     }
 
+    @Test
     public void sout(){
         String[] beanDefinitionNames = annotationConfigApplicationContext.getBeanDefinitionNames();
         for(String str : beanDefinitionNames){
             System.out.println(str);
         }
+    }
+
+    @Test
+    public void aware(){
+        System.out.println("装载容器："+annotationConfigApplicationContext);
+        Red red = annotationConfigApplicationContext.getBean(Red.class);
+        System.out.println(red);
     }
 }

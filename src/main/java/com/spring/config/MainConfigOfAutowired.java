@@ -11,11 +11,14 @@ import org.springframework.context.annotation.Primary;
  * @Author:hudi
  * @Date: Created in 9:04 2018/5/10
  */
-@ComponentScan({"com.spring.controller","com.spring.service","com.spring.dao"})
+@ComponentScan({"com.spring.controller","com.spring.service","com.spring.dao","com.spring.beans"})
 public class MainConfigOfAutowired {
 
     @Bean("bookDao2")
     private BookDao bookDao(){
         return new BookDao("2");
     }
+
+
 }
+
