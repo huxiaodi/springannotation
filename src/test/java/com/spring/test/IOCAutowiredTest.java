@@ -43,8 +43,15 @@ public class IOCAutowiredTest {
 
     @Test
     public void aware(){
-        System.out.println("装载容器："+annotationConfigApplicationContext);
+      /*  System.out.println("装载容器："+annotationConfigApplicationContext);
         Red red = annotationConfigApplicationContext.getBean(Red.class);
-        System.out.println(red);
+        System.out.println(red);*/
+
+
+
+
+        int a =(int)(Math.random()*90000+10000);
+        System.out.println(a);
     }
+
 }
